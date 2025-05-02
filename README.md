@@ -1,106 +1,133 @@
-# To-Do List Application
+# 📝 To-Do List Application (C Console App)
 
-A simple console-based to-do list application written in C that allows users to manage their tasks efficiently.
+A modular, console-based To-Do List application written in C. It helps users manage their tasks with features like authentication, categorization, task tracking, and file persistence.
 
-## Project Overview
+---
 
-This application provides a straightforward way to manage your daily tasks with features like task creation, editing, completion tracking, and categorization. The program is designed with a modular structure where each component is separated into its own .c file for better organization and maintainability.
+## 📌 Project Overview
 
-## File Structure
+This project offers a simple and structured way to manage daily tasks through a command-line interface. It's built with maintainability in mind, using a modular architecture (no header files), with each `.c` file focused on a specific functionality.
 
-The application consists of the following C files, each with a specific purpose:
+---
 
-- `main.c` - Contains the main program flow, global variables, and menu system
-- `auth.c` - Handles user authentication (signup and login)
-- `task_manager.c` - Manages basic task operations (add, delete, mark complete)
-- `task_view.c` - Handles displaying tasks and task summaries
-- `task_edit.c` - Contains functionality for editing existing tasks
-- `task_persistence.c` - Manages saving and loading tasks from files
+## 📁 File Structure
 
-## How to Compile and Run
+| File                  | Purpose                                                                 |
+|-----------------------|-------------------------------------------------------------------------|
+| `main.c`              | Main entry point; handles menus and program flow.                       |
+| `auth.c`              | Manages user authentication (signup/login).                             |
+| `task_manager.c`      | Core task operations: add, delete, mark as complete/incomplete.          |
+| `task_view.c`         | Displays task lists and summary statistics.                             |
+| `task_edit.c`         | Provides task editing capabilities.                                     |
+| `task_persistence.c`  | Handles saving/loading tasks to/from files for data persistence.         |
 
-To compile the program, use GCC or another C compiler with all the source files:
+---
+
+## ⚙️ How to Compile & Run
+
+### 🔧 Compile using GCC
+
+#### Linux/macOS:
 
 ```bash
 gcc main.c auth.c task_manager.c task_view.c task_edit.c task_persistence.c -o todo
-```
-
-Then run the program:
-
-```bash
 ./todo
 ```
 
-On Windows:
+#### Windows:
 
 ```bash
+gcc main.c auth.c task_manager.c task_view.c task_edit.c task_persistence.c -o todo.exe
 todo.exe
 ```
 
-## Basic Usage Instructions
+---
 
-1. When you first run the program, you'll need to sign up with a username and password
-2. After logging in, you can access the main menu to manage your tasks
-3. Add new tasks with descriptions, categories, and priority levels
-4. View, edit, and mark tasks as complete/incomplete
-5. Delete tasks you no longer need
-6. View a summary of your current tasks
-7. Your tasks are automatically saved to a file for future sessions
+## 🚀 Features
 
-## Features
+### ✅ User Authentication
 
-- User authentication (signup/login)
-- Task management
-  - Add tasks with descriptions
-  - Categorize tasks
-  - Set task priorities (High, Medium, Low)
-  - Mark tasks as complete/incomplete
-  - Edit existing tasks
-  - Delete tasks
-- Task viewing
-  - View all tasks with their status, priority, and category
-  - View task summary statistics
-- Data persistence
-  - Tasks are saved to a file
-  - Tasks are loaded when the program starts
+- Sign up and log in securely with credentials.
 
-## File Descriptions
+### 📋 Task Management
 
-### main.c
-Serves as the entry point of the application and contains the main program loop, global variables, and menu system. It coordinates between all other components.
+- Add tasks with descriptions, categories, and priorities.
+- Edit task details.
+- Mark tasks as complete or incomplete.
+- Delete tasks.
 
-### auth.c
-Handles user authentication including signup and login functionality. It manages the users.txt file for storing user credentials.
+### 🧾 Task Viewing
 
-### task_manager.c
-Contains functions for adding, deleting, and marking tasks as complete or incomplete. It provides the core task management functionality.
+- View all tasks with status, category, and priority.
+- Summary of completed vs. pending tasks.
 
-### task_view.c
-Responsible for displaying tasks in a formatted way and showing task summary statistics (total, completed, and pending tasks).
+### 💾 Persistent Storage
 
-### task_edit.c
-Provides functionality for editing existing tasks including their descriptions, categories, and priority levels.
+- All data is saved to text files for continuity.
 
-### task_persistence.c
-Manages saving tasks to and loading tasks from the tasks.txt file, ensuring data persistence between program runs.
+---
 
-## Data Storage
+## 🗂️ Data Files
 
-The application uses two text files for data storage:
+The app uses two plain text files for storing data:
 
-- `users.txt` - Stores user credentials in the format: `username password`
-- `tasks.txt` - Stores tasks in the format: `description|category|priority|completed`
+- `users.txt` – Stores credentials in the format: `username password`.
+- `tasks.txt` – Stores task data in the format: `description|category|priority|completed`.
 
-These files are created automatically in the same directory as the executable.
+📂 These files are auto-generated in the app's directory on first use.
 
-## Example Usage
+---
 
-1. Sign up with a new account or log in with existing credentials
-2. Add a new task with a description, category, and priority
-3. View your list of tasks
-4. Mark a task as complete when you finish it
-5. Edit a task if details change
-6. View your task summary to see your progress
-7. Log out when you're done
+## 👨‍💻 Example Usage
 
-This simple but effective to-do list application helps you manage your tasks while providing a good example of modular C programming without header files.
+```plaintext
+Welcome to the To-Do App!
+1. Sign Up
+2. Login
+Choose: 1
+Enter username: john
+Enter password: *****
+
+Successfully registered!
+
+Main Menu:
+1. Add Task
+2. View Tasks
+3. Edit Task
+4. Delete Task
+5. Mark Complete
+6. Task Summary
+7. Logout
+```
+
+---
+
+## 🧑‍🏫 Educational Value
+
+This project demonstrates:
+
+- Modular design in C programming.
+- File handling using `fopen`, `fscanf`, `fprintf`.
+- Simple user interface and menus.
+- Structs, string manipulation, and control logic in a real-world scenario.
+
+---
+
+## 💡 Future Enhancements
+
+- 📆 Add due dates and reminders.
+- 🔄 Sort tasks by priority, category, or date.
+- 🌈 Add color-coded CLI output for better UX.
+- 👥 Multi-user support with separate task lists.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Fork the repository, make your changes, and submit a pull request. Let's build this better, together.
